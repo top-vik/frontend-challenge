@@ -17,7 +17,6 @@ const catsSlice = createSlice({
     },
     reducers: {
         like(state, action) {
-            console.log(action.payload.favourite)
             if (state.favourites.find(item => item.id == action.payload.id)) {
                 return state
             } 
