@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 
 const Header = () => {
     return (
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="primary" variant="dark" expand="lg">
           <Container>
             <Nav className="me-auto">
                 <Link to="/" className={styles.link}>Все котики</Link>
