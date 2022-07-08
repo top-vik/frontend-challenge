@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
+import Card from '../../components/Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCats, like } from '../../reducers/catsSlice';
+import { getCats } from '../../reducers/catsSlice';
 
 import styles from "./Home.module.scss";
 
@@ -10,6 +10,7 @@ const Home = () => {
     const { cards } = useSelector(state => state.toolkit);
     const [currentPage, setCurrentPage] = useState(1);
     const [isFetching, setIsFetching] = useState(true);
+
 
 
 
@@ -33,23 +34,19 @@ const Home = () => {
             setIsFetching(true);
         }
     }
-   
     
 
-    return (
-        <>     
-            <div className={styles.container}>
-                {cards.map(card =>
-                    <Image 
-                        src={card.url} 
-                        className={styles.card}
-                        onClick={() => dispatch(like(card.id))}    
-                    />
-                )} 
-                {isFetching && <h1>Loading...</h1>}   
-            </div>
-            
-        </>
+    return (     
+        <div className={styles.container}>
+            {cards.map((card, index) =>
+                <Card 
+                    card={card}
+                    key={`${card.id} + ${index}`}
+                    className={styles.card}  
+                />
+            )} 
+            {isFetching && <h1>Loading...</h1>}   
+        </div>
     )
 }
 

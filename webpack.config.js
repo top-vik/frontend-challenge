@@ -10,7 +10,8 @@ module.exports = {
         filename: "[name].[hash].js"
     },
     devServer: {
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.json', '.wasm', '.jsx'],
@@ -26,8 +27,8 @@ module.exports = {
                 use: ["style-loader", "css-loader", "sass-loader"]
             },
             {
-                test: /\.(jpg|jpeg|png|svg)/,
-                use: ['file-loader']
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.m?js$/,

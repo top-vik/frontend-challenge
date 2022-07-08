@@ -15,8 +15,7 @@ const App = () => {
                     routes.map(({path, Component}) => {
                         return <Route key={path} path={path} element={<Component/>} exact/>
                     })
-                }
-            
+                }           
             </Routes>
     	</BrowserRouter>
     )

@@ -17,8 +17,13 @@ const catsSlice = createSlice({
     },
     reducers: {
         like(state, action) {
-            if(!state.favourites.includes(cards))
-           console.log(action.payload)
+            console.log(action.payload.favourite)
+            if (state.favourites.find(item => item.id == action.payload.id)) {
+                return state
+            } 
+            action.payload.favourite ? null :
+            state.favourites = [...state.favourites, {id: action.payload.id, url: action.payload.url, favourite: true}]
+            
         }
     },
     extraReducers: builder => {

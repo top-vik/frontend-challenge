@@ -1,0 +1,81 @@
+
+.card {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    
+
+    &_Image {
+        width: 225px;
+        height: 225px;
+        
+    }
+
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24);
+        &::after {
+            content: '';
+            width: 43px;
+            height: 40px;
+            position: absolute;
+            right: 8.33%;
+            bottom: 11.04%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url('../../assets/hollowheart.svg');
+
+        }
+    }
+
+    &:active {
+        &::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 8.33%;
+            bottom: 11.04%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url('../../assets/fullheart.svg');
+        }
+    }
+
+    &_liked {
+        @extend .card;
+        
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24);
+            &::after {
+                content: '';
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 8.33%;
+                bottom: 11.04%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                background-image: url('../../assets/fullheart.svg');
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 8.33%;
+            bottom: 11.04%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url('../../assets/fullheart.svg');
+        }
+    }
+}
