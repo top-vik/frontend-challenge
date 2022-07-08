@@ -1,25 +1,20 @@
 {
   "name": "frontend-challenge",
   "version": "1.0.0",
+  "homepage": "https://top-vik.github.io/frontend-challenge-uchi",
   "description": "Привет! Если ты хочешь стать частью команды Учи.ру в рамках стажёрской программы, \r то тебе необходимо выполнить небольшое тестовое задание. Это нужно, что бы твои \r потенциальные наставники смогли оценить твои навыки и сравнив их с остальными\r кандидатами выбрать лучших из лучших.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/top-vik/frontend-challenge.git"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/top-vik/frontend-challenge/issues"
-  },
-  "homepage": "https://github.com/top-vik/frontend-challenge#readme",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
@@ -28,6 +23,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "node-sass": "^7.0.1",
